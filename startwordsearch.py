@@ -14,7 +14,7 @@ def wordsearch(startwords_dict: dict, starting_index: int):
 
     candidate_words = []
     for word in word_vectors.index_to_key:
-        if re.search('^[\w\s]+$', word):
+        if re.search('^[A-Za-z]+$', word):
             if '_' not in word and not word[:1].isupper():
                 candidate_words.append(word)
 

@@ -3,7 +3,7 @@ import gensim.models
 import os
 import re
     
-STARTWORD = 'phoenix'
+STARTWORD = 'viscous'
 if os.path.exists('word2vec.wordvectors'):
     word_vectors = gensim.models.KeyedVectors.load('word2vec.wordvectors')
 else:
@@ -12,7 +12,7 @@ else:
 
 
 # Prepping dataset specifically for semantle.com filtering 
-# (alphanumeric and with first character potentially capitalized)
+# (single word, alphanumeric, and with first character potentially capitalized)
 candidate_words = []
 for word in word_vectors.index_to_key:
     if re.search('^[A-Za-z]+$', word):
